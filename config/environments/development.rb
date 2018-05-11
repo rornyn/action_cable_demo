@@ -42,6 +42,12 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  #action cable websocket listenport
+  #ngrok url setting 
+  config.web_socket_server_url = "wss://https://1f6b7048.ngrok.io/cable"
+  config.action_cable.allowed_request_origins = ["https://1f6b7048.ngrok.io"]
+  # config.action_cable.url = "wss://https://1f6b7048.ngrok.io/cable"
+
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
