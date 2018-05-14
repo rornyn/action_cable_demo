@@ -1,15 +1,13 @@
-<div class="card">
-  <div class="card-block">
-    <div class="row">
-      <div class="col-md-1">
-        <%#= gravatar_for message.user %>
-      </div>
-      <div class="col-md-11">
-        <p class="card-text">
-          <span class="text-muted"><%= message.user.name %> at <%= message.timestamp %> says</span><br>
-          <%= message.content %>
-        </p>
-      </div>
+<li class="<%= message_heading(message) %> clearfix">
+  <span class="chat-img pull-<%= message_heading(message) %>">
+  <img src="http://placehold.it/50/55C1E7/fff&text=<%= message.sender_name.first%>" alt="User Avatar" class="img-circle" />
+  </span>
+  <div class="chat-body clearfix">
+    <div class="header">
+      <%= message_detail_with_html(message) %>
     </div>
+    <p>
+      <%= message.content %>
+    </p>
   </div>
-</div>
+</li>

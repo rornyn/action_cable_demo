@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   belongs_to :user
 
   #Validation
-  validates :content, presence: true, length: {minimum: 2, maximum: 1000}
+  validates :content, presence: true, length: {minimum: 1, maximum: 1000}
 
   #Deligate
    delegate :name, prefix: :sender,  to: :user
