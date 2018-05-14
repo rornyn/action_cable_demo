@@ -17,6 +17,7 @@ jQuery(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
+        toastr.info(data['sender_name'], "New Messsage from")
         messages.append data['message']
         messages_to_bottom()
 

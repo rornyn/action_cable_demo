@@ -7,6 +7,9 @@ class Message < ApplicationRecord
   #Validation
   validates :content, presence: true, length: {minimum: 2, maximum: 1000}
 
+  #Deligate
+   delegate :name, prefix: :sender,  to: :user
+
   #Callback
   after_create_commit { MessageBroadcastJob.perform_later(self) }
 
