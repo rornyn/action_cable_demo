@@ -1,0 +1,8 @@
+$('#messages').prepend('<%= j render @messages %>');
+<% if  !@messages.last_page? %>
+  $('#infinite-scrolling').addClass('hide');
+  $('.pagination').replaceWith('<%= j paginate @messages %>');
+<% else %>
+  $('.panel-body').off('scroll');
+  $('.pagination').remove();
+<% end %>

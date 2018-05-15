@@ -4,6 +4,10 @@ class Message < ApplicationRecord
   belongs_to :chat_room
   belongs_to :user
 
+  #default per page
+  paginates_per 8
+
+
   #Validation
   validates :content, presence: true, length: {minimum: 1, maximum: 1000}
 

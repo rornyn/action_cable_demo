@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def current_user_div(message)
-    "<small class='text-muted'><span class='glyphicon glyphicon-time'></span></small>
+    "<small class='text-muted'><span class='glyphicon glyphicon-time'></span>#{message_time(message)}</small>
     <strong class='pull-right primary-font'>#{current_user.name}</strong>".html_safe
   end
 

@@ -1,5 +1,6 @@
 class ChatRoomsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_chat_room, only: [:show]
 
   def index
     @chat_rooms = ChatRoom.all
@@ -20,7 +21,7 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_room =  ChatRoom.includes(:messages => :user).find_by(id: params[:id])
+    @messages = @chat_room.messages.order('created_at desc').page(params[:page]).includes(:user)
     @message = Message.new
   end
 
@@ -28,5 +29,9 @@ class ChatRoomsController < ApplicationController
 
   def chat_room_params
     params.require(:chat_room).permit(:title)
+  end
+
+  def set_chat_room
+    @chat_room = ChatRoom.find params[:id]
   end
 end

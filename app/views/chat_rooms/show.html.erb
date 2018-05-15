@@ -10,10 +10,13 @@
             </a>
           </div>
         </div>
-        <div class="panel-collapse collapse" id="collapseOne">
+        <div id="infinite-scrolling" class="hide">
+          <%= paginate @messages %>
+        </div>
+        <div class="panel-collapse collapse in" id="collapseOne">
           <div class="panel-body">
             <ul class="chat" id="messages"  data-chat-room-id="<%= @chat_room.id %>">
-              <%= render @chat_room.messages %>
+              <%= render @messages.reverse %>
             </ul>
           </div>
           <div class="panel-footer">
