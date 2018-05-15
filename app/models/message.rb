@@ -5,7 +5,7 @@ class Message < ApplicationRecord
   belongs_to :user
 
   #default per page
-  paginates_per 8
+  paginates_per 10
 
 
   #Validation
