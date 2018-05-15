@@ -10,6 +10,10 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'pry'
+
+#pagination
+gem 'kaminari'
+
 #for notification
 gem 'toastr-rails'
 group :development, :test do
