@@ -13,7 +13,6 @@ gem 'pry'
 
 #pagination
 gem 'kaminari'
-
 #for notification
 gem 'toastr-rails'
 group :development, :test do
@@ -25,6 +24,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap-sass'
 gem 'devise'
@@ -44,4 +44,13 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'
+end
+
+group :development do
+  gem 'capistrano',         require: false
+  gem 'capistrano-rvm',     require: false
+  gem 'capistrano-rails',   require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano3-puma',   require: false
+  gem 'capistrano-ssh-doctor'
 end
