@@ -53,4 +53,6 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano3-puma',   require: false
   gem 'capistrano-ssh-doctor'
+  gem 'capistrano3-nginx'
+  gem 'capistrano-upload-config'
 end
