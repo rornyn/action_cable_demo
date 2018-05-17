@@ -38,7 +38,6 @@ require "capistrano/rails/migrations"
 require "capistrano/puma"
 require 'capistrano/ssh_doctor'
 require 'capistrano/upload-config'
-require 'capistrano/nginx'
 require 'capistrano/puma/nginx'
 
 
